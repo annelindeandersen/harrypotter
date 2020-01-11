@@ -1,0 +1,236 @@
+* {
+  box-sizing: border-box;
+  font-family: 'Playfair Display';
+  cursor: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg'  width='40' height='48' viewport='0 0 100 100' style='fill:black;font-size:24px;'><text y='50%'>⚡</text></svg>")
+      14 0,
+    auto;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  width: 100vw;
+  height: 100vh;
+  background-image: url(/img/bg-map.jpg);
+}
+
+nav {
+  width: 100vw;
+  height: 50px;
+  display: grid;
+  justify-items: center;
+  align-items: center;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+  background: rgba(0, 0, 0, 0.2);
+}
+
+a {
+  text-decoration-line: none;
+  color: #444444;
+}
+
+input {
+  background: white;
+  padding: 10px;
+  border-radius: 20px;
+  border: 1px solid white;
+  box-shadow: 0px 0px 10px #444444;
+  width: 20vw;
+}
+
+button, .submit {
+  background: #7a7a7a;
+  color: white;
+  padding: 10px;
+  border-radius: 20px;
+  border: 1px solid #7a7a7a;
+  box-shadow: 0px 0px 10px #444444;
+  width: 20vw;
+  /* cursor: pointer; */
+}
+
+h1 {
+  font-family: 'Magic School One';
+  font-size: 50px;
+  font-weight: lighter;
+}
+
+#logo {
+  width: auto;
+  height: 50px;
+}
+
+#houses {
+  text-align: center;
+  height: 80vh;
+}
+
+#houseOverview {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  justify-items: center;
+  align-items: center;
+  height: 100%;
+}
+
+#getHouse {
+  margin: 15px;
+}
+
+#spellsWrapper, #sortingWrapper, #loginWrapper, #profileWrapper {
+  width: 100vw;
+  height: 90vh;
+  display: flex;
+  flex-direction: column;
+  justify-items: center;
+  align-items: center;
+}
+
+.table-wrapper {
+  width: 100vw;
+}
+
+#userInfoContainer {
+  display: grid;
+  grid-template-columns: 1fr;
+  justify-items: center;
+  background: rgb(224, 224, 224);
+  padding: 25px 50px;
+  border-radius: 20px;
+  box-shadow: 0px 0px 10px gray;
+}
+
+#formWrapper {
+  display: grid;
+  grid-template-columns: 1fr;
+  justify-items: center;
+  align-items: baseline;
+  width: 100vw;
+  /* height: 50vh; */
+}
+
+#login, #signup {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 100%;
+}
+
+#login input, #signup input {
+  margin-bottom: 20px;
+  width: 28vw;
+}
+
+#closeImg {
+  filter: invert();
+}
+
+@keyframes float {
+	0% {
+		transform: translatey(0px);
+	}
+	50% {
+		transform: translatey(-20px);
+	}
+	100% {
+		transform: translatey(0px);
+	}
+}
+
+#sortinghat {
+  width: 30vw;
+  height: auto;
+  transform: translatey(0px);
+  animation: float 6s ease-in-out infinite;
+}
+
+/* .spell {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  margin: 5px 20px;
+  border-bottom: 1px dotted #444444;
+  color: #7a7a7a;
+} */
+
+/* .spellHead {
+  border-bottom: 2px dotted #444444;
+  font-weight: bolder;
+  color: #444444;
+} */
+
+/***** messages ******/
+
+.messages {
+  padding: 5% 0;
+  overflow: auto;
+  flex: auto;
+  width: 60vw;
+}
+
+.messageBox {
+  background: #F3F3F3;
+  border-radius: 20px;
+  padding: 5px 20px;
+  color: white;
+  display: inline-block;
+  max-width: 80%;
+}
+
+.messageText {
+  width: 100%;
+  letter-spacing: 0;
+  float: left;
+  font-size: 1.1em;
+  word-wrap: break-word;
+}
+
+.messageText img {
+  vertical-align: middle;
+}
+
+.messageContainer {
+  display: flex;
+  justify-content: flex-end;
+  padding: 0 5%;
+  margin-top: 3px;
+}
+
+.sentText {
+  display: flex;
+  align-items: center;
+  font-family: Helvetica;
+  color: #828282;
+  letter-spacing: 0.3px;
+}
+
+.pl-10 {
+  padding-left: 10px;
+}
+
+.pr-10 {
+  padding-right: 10px;
+}
+
+.justifyStart {
+  justify-content: flex-start;
+}
+
+.justifyEnd {
+  justify-content: flex-end;
+}
+
+.colorWhite {
+  color: white;
+}
+
+.colorDark {
+  color: #353535;
+}
+
+.backgroundBlue {
+  background: #2979FF;
+}
+
+.backgroundLight {
+  background: #F3F3F3;
+}

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Basic chat</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.3.0/socket.io.dev.js"></script>
+</head>
+<body>
+    <h1>What's on your mind?</h1>
+    <input type="text" id="username" name="username" placeholder="What's your name?">
+    <input type="text" id="message" name="message" placeholder="What're you thinking?">
+    <button id="send">Click</button>
+
+    <div id="messageBox"></div>
+
+    <script>
+        const socket = io.connect("localhost:4000");
+
+        $("#send").click( () => {
+            socket.emit("I'm thinking about this", { username: $("#username").val(), message: $("#message").val() });
+            {% comment %} $.ajax({
+                url: '/send',
+                data: {
+                    username: $("#username").val(),
+                    message: $("#message").val()
+                }
+            }).done(function(data){
+                console.log(data)
+            }).fail(function(eror){
+                console.log(error)
+            }) {% endcomment %}
+        });
+
+        {% comment %} fruits = ['apple', 'pear', 'banana']
+        for (let i=0; i < fruits.length ;i++) {
+            return fruits[i]
+        }
+
+        fruits.map((fruit) => (
+           console.log(fruit)
+        ))
+
+        fruits.forEach((fruit) => {
+            console.log(fruit)
+        }) {% endcomment %}
+
+        socket.on("Someone said", data => {
+            console.log(data);
+            $("#messageBox").prepend("<div>" + data.username + ": " + data.message + "</div><br>");
+        })
+    </script>
+</body>
+</html>
